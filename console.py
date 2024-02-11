@@ -135,7 +135,7 @@ class HBNBConsole(cmd.Cmd):
         Display string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
         arg_list = parse_arguments(arg)
-        if len(arg_list) > 0
+        if len(arg_list) > 0 \
         and arg_list[0] not in HBNBConsole.available_classes:
             print("** class doesn't exist **")
         else:
