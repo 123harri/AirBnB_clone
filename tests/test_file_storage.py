@@ -1,7 +1,10 @@
+#!/usr/bin/python3
+"""Defines unittests for models/engine/file_storage.py."""
 import unittest
 import os
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
+
 
 class TestFileStorage(unittest.TestCase):
     def setUp(self):
@@ -33,7 +36,7 @@ class TestFileStorage(unittest.TestCase):
         # Test the save() and reload() methods
         self.storage.new(self.model)
         self.storage.save()
-        
+
         # Check if the file is created
         self.assertTrue(os.path.exists("file.json"))
 
@@ -48,6 +51,7 @@ class TestFileStorage(unittest.TestCase):
         # Test reload() without an existing file
         self.storage.reload()
         # No exception should be raised
+
 
 if __name__ == "__main__":
     unittest.main()

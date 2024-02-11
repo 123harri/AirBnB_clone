@@ -4,6 +4,12 @@ Module for the FileStorage class.
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.city import City
 
 
 class FileStorage:
@@ -12,7 +18,15 @@ class FileStorage:
     instances to/from a JSON file.
     """
     __file_path = "file.json"
-    __objects = {}
+    __objects = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review,
+        "State": State,
+        "City": City
+    }
 
     def all(self):
         """Returns the dictionary __objects."""
